@@ -118,3 +118,28 @@ std::cout << typeid(value).name() << std::endl;
 ```
 
 I would like to better understand what `typeid().name()` actually returns and whether there is a better way to inspect types while learning C++.
+
+# decltype
+
+## What Did I Learn?
+
+* Referenceness is ignored in `auto` type deduction, `decltype(auto)` deduction, and template type deduction.
+* Thus, returning the value of a reference with `decltype(auto)` will dereference the value, returning an rvalue.
+* A simple fix for this is to return `std::forward<T>(param)` instead when using a `decltype(auto)` return type and parameterizing the function with a global reference or `&&`.
+
+## Why Does It Matter?
+
+* Automatic dereferencing can create problems when attempting to set a reference to a value.
+* It is important to exercise caution when using `decltype(auto)`.
+
+## Where Would I Use This in a Game Engine?
+
+`decltype(auto)` can be used to return a type based on the type of the return value of a function.
+
+It should be treated with care. In a game engine, I would expect to use `decltype(auto)` for generalized function calls that may have a variance in the return type based on the input type of the function.
+
+## What Questions Do I Still Have?
+
+* I still cannot see the referenceness of an object using the utilities I am familiar with. It is often dereferenced before calling `typeid()`.
+* How do I check the referenceness of an object in C++14 and later?
+
