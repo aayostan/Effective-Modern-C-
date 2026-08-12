@@ -1,6 +1,9 @@
 # Effective-Modern-C-++
 These are my notes from Effective Modern C++ by Scott Myers Item by Item
 
+
+
+
 # Template Functions
 
 ## What Did I Learn?
@@ -47,6 +50,10 @@ I still have questions about how C++ handles the type of a parameter when it is 
 * Is there a way to print or inspect whether a parameter is a reference?
 * When designing generic functions for a game engine, what should I be aware of when using templates?
 * Are there simpler or more effective ways to handle generic functionality in a game engine?
+
+
+
+
 
 # `auto` Type Deduction
 
@@ -119,6 +126,10 @@ std::cout << typeid(value).name() << std::endl;
 
 I would like to better understand what `typeid().name()` actually returns and whether there is a better way to inspect types while learning C++.
 
+
+
+
+
 # decltype
 
 ## What Did I Learn?
@@ -142,4 +153,34 @@ It should be treated with care. In a game engine, I would expect to use `decltyp
 
 * I still cannot see the referenceness of an object using the utilities I am familiar with. It is often dereferenced before calling `typeid()`.
 * How do I check the referenceness of an object in C++14 and later?
+
+
+
+
+
+# Type Identification
+
+## What Did I Learn?
+
+* The **Boost library** can be used to determine the type of a variable.
+* Type deduction does not always work as expected, so having a way to inspect a variable's type can be useful when debugging or working with generic code.
+
+## Why Does It Matter?
+
+In C++, you may need to determine what type an object actually is, especially when working with generic functions and user-defined types.
+
+In a game engine, this can be particularly useful because **typecasting and working with user-defined types are common**. Being able to inspect a variable's type can help when debugging type deduction or determining how an object is being handled by a generic function.
+
+## Where Would I Use This in a Game Engine?
+
+When trying to determine the type of an object or generalize a function's input type, the Boost library can provide information about the variable's type.
+
+This could be useful when working with generic engine systems that need to operate on different user-defined types.
+
+## What Questions Do I Still Have?
+
+* How do you install and configure Boost for use in a game engine?
+* Can Boost report the types of user-defined classes?
+* Can Boost's type information be used to help with generic functions?
+
 
