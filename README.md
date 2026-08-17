@@ -184,3 +184,26 @@ This could be useful when working with generic engine systems that need to opera
 * Can Boost's type information be used to help with generic functions?
 
 
+
+
+# Auto vs Declared Types
+
+# Lessons Learned
+
+## What Did I Learn?
+
+* `auto` can be used in contexts where previously explicit typing was required with templates and the like (`unique_ptr` and `function` were used).
+
+## Why?
+
+* `auto` is less cumbersome to use in memory and in typing out what you mean in the code. It can deduce complex types known only to the compiler.
+
+## Game Engine?
+
+* `auto` can be used in game engine code for better portability between systems.
+
+## Questions:
+
+* How do you use `std::unique_ptr` without getting a compiler error?
+* Does the standard library even have template versions of `function` and `unique_ptr`?
+* Which version of C++ am I currently working with?
