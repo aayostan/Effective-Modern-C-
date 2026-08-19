@@ -207,3 +207,36 @@ This could be useful when working with generic engine systems that need to opera
 * How do you use `std::unique_ptr` without getting a compiler error?
 * Does the standard library even have template versions of `function` and `unique_ptr`?
 * Which version of C++ am I currently working with?
+
+
+
+
+
+
+# Auto Undefined Behavior
+
+## Lessons Learned
+
+* Understanding the behavior of `auto` under different circumstances is paramount, and it should only be used when it benefits the program.
+* Some cases can create undefined behavior with a dangling pointer if you aren't careful.
+* "As a general rule, 'invisible' proxy classes don't play well with `auto`."
+* Explicitly Typed Initializer Idiom (ETII).
+
+## Why?
+
+* ETII adds transparency to a program, and understanding that proxies can lead to undefined behavior with `auto` is important to consider when designing a program.
+
+## Game Engine Usage
+
+* A game engine like Unreal uses C++, classes, and potentially `auto`. Understanding when to use it and when to use ETII for transparency is useful.
+
+## Questions
+
+1. What is a proxy?
+2. What is an invisible proxy?
+3. In what cases is `auto` justified?
+4. In what cases is `auto` unjustified?
+5. What is a proxy class?
+6. What is the proxy design pattern?
+7. Why would you use an Explicitly Typed Initializer Idiom?
+
